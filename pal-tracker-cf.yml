@@ -6,7 +6,7 @@ applications:
   buildpacks:
   - java_buildpack_offline
   random-route: true
-  instances: 2
+  instances: 1
   memory: 1G
   disk: 1G
   env:
