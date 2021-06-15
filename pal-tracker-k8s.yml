@@ -1,0 +1,52 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pal-tracker
+  labels:
+    app: pal-tracker
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pal-tracker
+  template:
+    metadata:
+      labels:
+        app: pal-tracker
+    spec:
+      containers:
+      - name: pal-tracker
+        image: bkable/pal-tracker:v0.0.2
+        ports:
+        - containerPort: 8080
+        env:
+        - name: WELCOME_MESSAGE
+          value: "hello from kubernetes"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pal-tracker
+  labels:
+    app: pal-tracker
+spec:
+  selector:
+    app: pal-tracker
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pal-tracker
+  labels:
+    app: pal-tracker
+spec:
+  defaultBackend:
+    service:
+      name: pal-tracker
+      port:
+        number: 8080
