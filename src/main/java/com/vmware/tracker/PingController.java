@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PingController {
 	private final String message;
 
-	public PingController(@Value("${greeting.message}") String message) {
+	public PingController(@Value("${greeting.message: Some default message}") String message) {
 		this.message = message;
 	}
 
