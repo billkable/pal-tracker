@@ -1,4 +1,4 @@
-package com.example.springboot;
+package com.vmware.tracker;
 
 import java.util.Arrays;
 
@@ -32,7 +32,7 @@ public class Application {
 		};
 	}
 	
-    	@Bean
+	@Bean
 	public HttpTraceRepository htttpTraceRepository() {
 		return new InMemoryHttpTraceRepository();
 	}

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>tal-tracker</artifactId>
+	<version>0.0.1</version>
 	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<description>TAL Tracker</description>
 
 	<properties>
 		<java.version>8</java.version>

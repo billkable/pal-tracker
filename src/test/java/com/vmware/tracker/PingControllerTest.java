@@ -1,8 +1,10 @@
-package com.example.springboot;
+package com.vmware.tracker;
 
+import com.vmware.tracker.PingController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,18 +12,19 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(HelloController.class)
-class HelloControllerTest {
+@WebMvcTest(PingController.class)
+@TestPropertySource(properties = { "greeting.message=Spring Boot + Tanzu!" })
+class PingControllerTest {
 
     @Autowired
-    private HelloController controller;
+    private PingController controller;
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void index() throws Exception {
-        assertEquals("Greetings from Spring Boot + Tanzu!", controller.index());
+    void ping() throws Exception {
+        assertEquals("Greetings from Spring Boot + Tanzu!", controller.ping());
 
         mockMvc
             .perform(get("/"))

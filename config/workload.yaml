@@ -12,3 +12,6 @@ spec:
       url: https://github.com/billkable/pal-tracker
       ref:
         branch: main
+  env:
+    - name: GREETING_MESSAGE
+      value: "Tanzu Application Platform!"
