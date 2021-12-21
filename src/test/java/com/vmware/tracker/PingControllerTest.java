@@ -1,6 +1,5 @@
 package com.vmware.tracker;
 
-import com.vmware.tracker.PingController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -24,11 +23,11 @@ class PingControllerTest {
 
     @Test
     void ping() throws Exception {
-        assertEquals("Greetings from Spring Boot + Tanzu!", controller.ping());
+        assertEquals("Greetings! Pinging you from Spring Boot + Tanzu!", controller.ping());
 
         mockMvc
             .perform(get("/"))
             .andExpect(status().isOk())
-            .andExpect(content().string("Greetings from Spring Boot + Tanzu!"));
+            .andExpect(content().string("Greetings! Pinging you from Spring Boot + Tanzu!"));
     }
 }

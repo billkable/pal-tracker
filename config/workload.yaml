@@ -12,6 +12,9 @@ spec:
       url: https://github.com/billkable/pal-tracker
       ref:
         branch: main
+  params:
+  - name: tekton-pipeline-name
+    value: pal-tracker-ci-pipeline
   env:
     - name: GREETING_MESSAGE
-      value: "Tanzu Application Platform!"
+      value: "Tanzu Application Platform (updated)!"

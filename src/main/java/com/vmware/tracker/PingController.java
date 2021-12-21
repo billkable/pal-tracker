@@ -14,7 +14,7 @@ public class PingController {
 
 	@GetMapping("/")
 	public String ping() {
-		return "Greetings from " + message;
+		return "Greetings! Pinging you from " + message;
 	}
 
 }
