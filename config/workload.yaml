@@ -17,4 +17,4 @@ spec:
     value: pal-tracker-ci-pipeline
   env:
     - name: GREETING_MESSAGE
-      value: "Tanzu Application Platform (updated)!"
+      value: "taproom-beta4"

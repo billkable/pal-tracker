@@ -23,11 +23,11 @@ class PingControllerTest {
 
     @Test
     void ping() throws Exception {
-        assertEquals("Greetings! Pinging you from Spring Boot + Tanzu!", controller.ping());
+        assertEquals("Greetings! Pinging you again from Spring Boot + Tanzu!", controller.ping());
 
         mockMvc
             .perform(get("/"))
             .andExpect(status().isOk())
-            .andExpect(content().string("Greetings! Pinging you from Spring Boot + Tanzu!"));
+            .andExpect(content().string("Greetings! Pinging you again from Spring Boot + Tanzu!"));
     }
 }
