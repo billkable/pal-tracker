@@ -12,10 +12,9 @@ public class PingController {
 		this.message = message;
 	}
 
-	// Force a build
 	@GetMapping("/")
 	public String ping() {
-		return "Greetings! Pinging you again from " + message;
+		return "Greetings! Forced a ping from " + message;
 	}
 
 }
